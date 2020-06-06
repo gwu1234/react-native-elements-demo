@@ -1,44 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { View, Dimensions, } from 'react-native';
 import { Button, Text, Badge, CheckBox} from 'react-native-elements';
 import { Actions } from 'react-native-router-flux';
 const  screenHeight = Dimensions.get('window').height; 
 
-class CheckBoxes extends Component {
-  constructor() {
-      super();
-      this.state = {
-         checked_1: false,
-         checked_2: false,
-         checked_3: false,
-         checked_4: false
-      }
-  }
+const Hooks = () => {  
+    const [state, setState] = useState ({ 
+               checked_1: false, 
+               checked_2: false, 
+               checked_3: false,
+               checked_4: false
+        });
 
-  buttonPressed =() => {
-     console.log("pressed");
-  }
-
-  render() {    
-      return ( 
+    return ( 
         <View style={styles.container}>
             <View style={styles.header}>
-                  <Text h1 style ={{color: "white"}} >CheckBox Show Room</Text>
+                  <Text h1 style ={{color: "white"}} >React Hooks Playground</Text>
+                  <Text h3 style ={{color: "white"}} >these checkboxes are implemented with Hooks</Text>
             </View>
             <View style={styles.checkboxContainer}>
                 <CheckBox
                     title='check box 1'
-                    checked={this.state.checked_1}
-                    onPress = {()=>this.setState ({
-                      checked_1: !this.state.checked_1
+                    checked={state.checked_1}
+                    onPress = {()=>setState ({
+                       ...state, checked_1: !state.checked_1
                     })}
                   />
                   <CheckBox
                     center
                     title='check box 2'
-                    checked={this.state.checked_2}
-                    onPress = {()=>this.setState ({
-                      checked_2: !this.state.checked_2
+                    checked={state.checked_2}
+                    onPress = {()=>setState ({
+                       ...state, checked_2: !state.checked_2
                     })}
                   />
                   <CheckBox
@@ -46,9 +39,9 @@ class CheckBoxes extends Component {
                     title='check box 3'
                     checkedIcon='dot-circle-o'
                     uncheckedIcon='circle-o'
-                    checked={this.state.checked_3}
-                    onPress = {()=>this.setState ({
-                      checked_3: !this.state.checked_3
+                    checked={state.checked_3}
+                    onPress = {()=>setState ({
+                       ...state, checked_3: !state.checked_3
                     })}
                   />
                   <CheckBox
@@ -59,9 +52,9 @@ class CheckBoxes extends Component {
                     checkedIcon='clear'
                     uncheckedIcon='add'
                     checkedColor='red'
-                    checked={this.state.checked_4}
-                    onPress = {()=>this.setState ({
-                      checked_4: !this.state.checked_4
+                    checked={state.checked_4}
+                    onPress = {()=>setState ({
+                       ...state, checked_4: !state.checked_4
                     })}
                   />                          
             </View>
@@ -100,18 +93,17 @@ class CheckBoxes extends Component {
                       icon={{ name: "input", size: 20, color: "black"}} 
                       iconRight 
                       title="Forms"
-                      onPress = {()=>Actions.forms()}/>   
+                      onPress = {()=>Actions.forms()}/>      
                     <Button 
                       raised
                       type="outline"
                       icon={{ name: "input", size: 20, color: "black"}} 
                       iconRight 
-                      title="Hooks"
-                      onPress = {()=>Actions.hooks()}/>                   
+                      title="Checkboxes"
+                      onPress = {()=>Actions.checkboxes()}/>                     
              </View>  
           </View>   
         );
-      }
   }
 
 const styles = {
@@ -122,13 +114,13 @@ const styles = {
     position: 'absolute',
     top: 0,
     width: "100%",
-    height: screenHeight*0.1,
+    height: screenHeight*0.2,
     backgroundColor: '#EE5407',
     alignItems: "center",
   },
   checkboxContainer: {
-    marginTop : screenHeight*0.1,
-    height: screenHeight*0.8,
+    marginTop : screenHeight*0.2,
+    height: screenHeight*0.7,
     flexDirection: "column", 
     justifyContent: "space-around", 
     alignItems: "center",   
@@ -144,4 +136,4 @@ const styles = {
   }
 };
 
-export default CheckBoxes
+export default Hooks

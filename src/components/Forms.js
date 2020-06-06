@@ -128,7 +128,14 @@ class Forms extends Component {
                       icon={{ name: "input", size: 20, color: "black"}} 
                       iconRight 
                       title="Lists" 
-                      onPress = {()=>Actions.lists()}/>                      
+                      onPress = {()=>Actions.lists()}/>      
+                    <Button 
+                      raised
+                      type="outline"
+                      icon={{ name: "input", size: 20, color: "black"}} 
+                      iconRight 
+                      title="Hooks" 
+                      onPress = {()=>Actions.hooks()}/>                      
              </View>  
           </View>   
         );

@@ -6,6 +6,7 @@ import Badges from './src/components/Badges';
 import CheckBoxes from './src/components/CheckBoxes';
 import Lists from './src/components/lists';
 import Forms from './src/components/Forms';
+import Hooks from './src/components/Hooks';
 
 class App extends Component {
     constructor() {
@@ -22,6 +23,7 @@ class App extends Component {
                   <Scene key="checkboxes" component={CheckBoxes} title="checkboxes" />
                   <Scene key="lists" component={Lists} title="lists" />
                   <Scene key="forms" component={Forms} title="forms" />
+                  <Scene key="hooks" component={Hooks} title="hooks" />
               </Scene>
          </Router>
        );

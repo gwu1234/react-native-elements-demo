@@ -133,7 +133,13 @@ class Buttons extends Component {
                       type="outline"
                       icon={{ name: "menu", size: 20, type: 'entypo', color: "black"}} 
                       iconRight title="Forms"
-                      onPress = {()=>Actions.forms()}/>                          
+                      onPress = {()=>Actions.forms()}/>   
+                    <Button 
+                      raised
+                      type="outline"
+                      icon={{ name: "menu", size: 20, type: 'entypo', color: "black"}} 
+                      iconRight title="Hooks"
+                      onPress = {()=>Actions.hooks()}/>                           
              </View>  
           </View>   
         );

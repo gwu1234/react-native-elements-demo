@@ -1,4 +1,4 @@
-it is a ui demo project based on React, Expo, React-Native-Elements and react-native-router-flux
+it is a ui demo project based on React, React Hook, Expo, React-Native-Elements and react-native-router-flux
 
 It is to demonstrate api of the styling React-Native library (React-Native-Elements)
 
